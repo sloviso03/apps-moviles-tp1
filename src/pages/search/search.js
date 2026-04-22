@@ -11,8 +11,7 @@ const PAGE_SIZE = 10
 
 function readInitialStateFromUrl() {
   const params = new URLSearchParams(location.search)
-
-  const state = {
+  return {
     search:    params.get('search')    || '',
     genres:    params.get('genres')    || '',
     stores:    params.get('stores')    || '',
@@ -20,10 +19,6 @@ function readInitialStateFromUrl() {
     ordering:  params.get('ordering')  || '',
     page: 1,
   }
-
-  history.replaceState(null, '', '/search') 
-
-  return state
 }
 
 export async function SearchPage() {

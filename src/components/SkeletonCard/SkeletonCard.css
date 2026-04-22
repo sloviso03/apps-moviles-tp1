@@ -1,5 +1,5 @@
 .skeleton-card {
-  border-radius: 16px;
+  border-radius: 1rem;
   overflow: hidden;
   background: #1a1a1a;
   width: 100%;
@@ -20,19 +20,18 @@
   aspect-ratio: 16 / 9;
 }
 
-/* ✅ replica el game-card-body */
 .skeleton-body {
-  padding: 12px 14px;
+  padding: .75rem .875rem;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: .625rem;
   background: var(--color-background-secondary);
 }
 
 .skeleton-body-info {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: .375rem;
 }
 
 .skeleton-body-footer {
@@ -42,19 +41,31 @@
 }
 
 .skeleton-line {
-  border-radius: 6px;
+  border-radius: .375rem;
   background: linear-gradient(90deg, var(--color-background-secondary) 25%, var(--color-background-tertiary) 50%, var(--color-background-secondary) 75%);
   background-size: 200% 100%;
   animation: skeleton-shimmer 1.4s infinite;
 }
 
-/* tamaños que replican title, genre, rating y btn */
-.skeleton-line--title  { height: 14px; width: 70%; }
-.skeleton-line--genre  { height: 10px; width: 40%; }
-.skeleton-line--rating { height: 14px; width: 40px; }
-.skeleton-line--btn    { height: 28px; width: 70px; border-radius: 20px; }
+.skeleton-line--title  { height: .875rem; width: 70%; }
+.skeleton-line--genre  { height: .625rem; width: 40%; }
+.skeleton-line--rating { height: .875rem; width: 2.5rem; }
+.skeleton-line--btn    { height: 1.75rem; width: 4.375rem; border-radius: 1.25rem; }
 
 @keyframes skeleton-shimmer {
   0%   { background-position: 200% 0; }
   100% { background-position: -200% 0; }
+}
+
+
+@media (max-width: 30rem) {
+  .skeleton-card {
+    border-radius: 16px;
+    overflow: hidden;
+    background: #1a1a1a;
+    width: 100%;
+    min-width: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
 }
